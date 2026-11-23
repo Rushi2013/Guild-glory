@@ -5,9 +5,8 @@ on:
     branches:
       - main
       - 'arena/**'
-    paths:
-      - 'android/**'
-      - '.github/workflows/android.yml'
+    tags:
+      - 'v*'
   pull_request:
     paths:
       - 'android/**'
