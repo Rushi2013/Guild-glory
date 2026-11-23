@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.aurora.floatdeck'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.aurora.floatdeck"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        // the workflow builds the APK, it does not run a full lint report
+        abortOnError false
+    }
+}
+
+// No dependencies on purpose: the whole overlay is built from platform APIs,
+// so the build works on any machine with the Android SDK and no network cache.
+dependencies {
+}
