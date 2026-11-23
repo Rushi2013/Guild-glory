@@ -114,7 +114,9 @@ public final class Prefs {
     public void applyPreset(String name) {
         setPreset(name);
         if ("Low".equals(name)) {
-            setUpdateRate(15);
+            // 16 lands on the slider's step grid (min 8, step 2) so the label and
+            // the knob stay in agreement
+            setUpdateRate(16);
             setBubbleAlpha(70);
             setPanelAlpha(85);
         } else if ("High".equals(name)) {
